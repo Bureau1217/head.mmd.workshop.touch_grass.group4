@@ -1,5 +1,7 @@
 import { createApp } from 'vue'
 import App from './views/App.vue'
+import '@/shared/styles/tokens.css'
+import '@/shared/styles/components.css'
 
 console.log('[CRXJS] Hello world from content script! AND Touch GRAAAASSS!')
 

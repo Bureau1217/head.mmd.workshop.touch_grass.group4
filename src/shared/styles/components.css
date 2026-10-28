@@ -1,0 +1,52 @@
+/**
+ * Classes communes, utilisables partout (popup, sidepanel et content).
+ *
+ * Toujours préfixées `.tg-` et sans sélecteur d'élément global (body, button…),
+ * pour ne pas modifier le style des pages où le content script est injecté.
+ */
+.tg-card {
+  padding: var(--tg-space-lg);
+}
+
+.tg-surface {
+  background-color: white;
+  color: #1f2937;
+  border-radius: var(--tg-radius-sm);
+  box-shadow: var(--tg-shadow);
+  padding: var(--tg-space-sm) var(--tg-space-md);
+}
+
+.tg-button {
+  border-radius: var(--tg-radius-sm);
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--tg-color-surface);
+  cursor: pointer;
+  transition: border-color var(--tg-transition);
+}
+.tg-button:hover {
+  border-color: var(--tg-color-accent);
+}
+
+.tg-button-round {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: var(--tg-radius-round);
+  box-shadow: var(--tg-shadow);
+  background-color: var(--tg-color-primary);
+  cursor: pointer;
+}
+.tg-button-round:hover {
+  background-color: var(--tg-color-primary-hover);
+}
+
+.tg-text-muted {
+  color: var(--tg-color-text-muted);
+}

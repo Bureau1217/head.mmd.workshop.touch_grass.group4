@@ -10,13 +10,13 @@ const toggle = () => show.value = !show.value
   <div class="popup-container">
     <div
       v-show="show"
-      class="popup-content"
+      class="popup-content tg-surface"
       :class="show ? 'opacity-100' : 'opacity-0'"
     >
       <h1>HELLO CRXJS + Touch GRAAAASSS!</h1>
     </div>
     <button
-      class="toggle-button"
+      class="tg-button-round"
       @click="toggle()"
     >
       <img :src="Logo" alt="CRXJS logo" class="button-icon">
@@ -39,35 +39,10 @@ const toggle = () => show.value = !show.value
 }
 
 .popup-content {
-  background-color: white;
-  color: #1f2937;
-  border-radius: 0.5rem;
-  box-shadow:
-    0 4px 6px -1px rgb(0 0 0 / 0.1),
-    0 2px 4px -2px rgb(0 0 0 / 0.1);
   width: max-content;
   height: min-content;
-  padding: 0.5rem 1rem;
-  margin: auto 0.5rem 0 0;
+  margin: auto var(--tg-space-sm) 0 0;
   transition: opacity 300ms;
-}
-
-.toggle-button {
-  display: flex;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 9999px;
-  box-shadow:
-    0 1px 3px 0 rgb(0 0 0 / 0.1),
-    0 1px 2px -1px rgb(0 0 0 / 0.1);
-  cursor: pointer;
-  border: none;
-  background-color: #288cd7;
-}
-
-.toggle-button:hover {
-  background-color: #1e6aa3;
 }
 
 .button-icon {
