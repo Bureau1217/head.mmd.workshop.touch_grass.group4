@@ -1,48 +1,52 @@
-# Chromium extension blank starter kit (typescript)
+# Vue 3 + Vite + CRXJS
 
-Minimal extension (Manifest V3)
-written in **TypeScript**
-bundled with **Vite 8**
-and the **CRXJS** plugin, which handles the manifest and automatic reloading.
+This template helps you quickly start developing Chrome extensions with Vue 3, TypeScript and Vite. It includes the CRXJS Vite plugin for seamless Chrome extension development.
 
-## Structure
+## Features
 
-```
-manifest.json      # extension description (points directly to the .ts files)
-vite.config.ts     # Vite config + CRXJS plugin
-src/
-├── popup.html     # window opened when clicking the icon
-├── popup.ts       # popup logic
-└── content.ts     # script injected into every page
-```
+- Vue 3 with `<script setup>` syntax
+- TypeScript support
+- Vite build tool
+- CRXJS Vite plugin integration
+- Chrome extension manifest configuration
 
-## install
+## Quick Start
 
-```zsh
+1. Install dependencies:
+
+```bash
 npm install
 ```
 
-## Run dev mode
+2. Start development server:
 
-```sh
-npm run dev      # dev mode : hot-reload on any files change event
+```bash
+npm run dev
 ```
-Hot Reload with dev mode
 
-## Load plugin in a browser (chromium-based example)
+3. Open Chrome and navigate to `chrome://extensions/`, enable "Developer mode", and load the unpacked extension from the `dist` directory.
 
-1. Run `npm run dev` (or `npm run build`)
-2. Open `chrome://extensions` and enable **Developer mode**
-3. Click **Load unpacked** → select the `dist/` folder
+4. Build for production:
 
-
-## How to Debug
-
-- `content.ts` : console DevTools in browser (F12)
-- `popup.ts` : right-click in the popup → **Inspect**
-
-## Build
-
-```zsh
-npm run build    # build in dist/
+```bash
+npm run build
 ```
+
+## Project Structure
+
+- `src/popup/` - Extension popup UI
+- `src/content/` - Content scripts
+- `manifest.config.ts` - Chrome extension manifest configuration
+
+## Documentation
+
+- [Vue 3 Documentation](https://vuejs.org/)
+- [Vite Documentation](https://vitejs.dev/)
+- [CRXJS Documentation](https://crxjs.dev/vite-plugin)
+
+## Chrome Extension Development Notes
+
+- Use `manifest.config.ts` to configure your extension
+- The CRXJS plugin automatically handles manifest generation
+- Content scripts should be placed in `src/content/`
+- Popup UI should be placed in `src/popup/`
