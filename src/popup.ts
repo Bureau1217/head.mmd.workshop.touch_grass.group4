@@ -2,5 +2,5 @@
 const button = document.querySelector<HTMLButtonElement>("#btn")!;
 
 button.addEventListener("click", () => {
-  alert("Bonjour depuis le popup !");
+  alert("Bonjour depuis le popup Touch Grass!");
 });
