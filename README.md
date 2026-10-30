@@ -48,9 +48,6 @@ public/              # copied into dist/ as-is
 ├── icons/           # toolbar icons (redraw them: node tools/make-icons.mjs)
 └── cats/            # the calming cat photos
 ```
-Why more than three files? `background.ts` has to exist: a web page isn't
-allowed to count or close tabs, only the extension's background can.
-`config.ts` is shared by the other three, so the numbers only live in one place.
 
 **Dev panel:** popup → *open dev panel*. It docks next to your tabs and shows
 live stress graphs, what's causing it, why he isn't dead yet, an event log, and
