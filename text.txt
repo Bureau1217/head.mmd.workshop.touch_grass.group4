@@ -1,0 +1,3 @@
+okay we confirmed we are making a plugin/browser extension. im thinking of a little sootsprite form ghibli or even clippy as a reference. basically i like the idea of a little soft ball that can float / jump around / move ontright side of the screen. im gonna call it webby but the name will probably be different in the end.
+
+how do i make a prototy of this plugin? can you help me prototype and iterate and then  

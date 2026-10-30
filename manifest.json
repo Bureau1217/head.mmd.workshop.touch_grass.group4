@@ -1,0 +1,57 @@
+{
+  "manifest_version": 3,
+  "name": "Browsy",
+  "version": "0.1.0",
+  "description": "A small creature who lives in your browser and gets overwhelmed when you do.",
+
+  "permissions": ["tabs", "storage", "alarms", "search", "sidePanel"],
+  "host_permissions": ["https://www.gstatic.com/*", "<all_urls>"],
+
+  "action": {
+    "default_title": "Browsy",
+    "default_popup": "src/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_page": "src/popup.html",
+  "side_panel": {
+    "default_path": "src/popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content.ts"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/frames.ts"],
+      "all_frames": true,
+      "match_about_blank": true,
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "service_worker": "src/background.ts",
+    "type": "module"
+  },
+  "chrome_url_overrides": {
+    "newtab": "src/newtab.html"
+  },
+
+  "web_accessible_resources": [
+    {
+      "resources": ["cats/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>New Tab</title>
+  <style>
+    :root { color-scheme: dark; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      display: grid; place-items: center;
+      background: #1b1b1b; color: #e6e6e6;
+      font: 16px/1.4 system-ui, 'Segoe UI', sans-serif;
+    }
+    main { width: min(620px, 90vw); margin-top: -14vh; text-align: center; }
+    .clock { font-size: 76px; font-weight: 300; letter-spacing: -1px; font-variant-numeric: tabular-nums; }
+    .date { margin: 6px 0 36px; color: #8a8a8a; }
+    form {
+      display: flex; align-items: center; gap: 12px;
+      height: 54px; padding: 0 22px; border-radius: 27px;
+      background: #2a2a2a; border: 1px solid #3a3a3a;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    form:focus-within { border-color: #22d36a; box-shadow: 0 0 0 4px rgba(34, 211, 106, .15); }
+    form svg { flex: none; width: 20px; height: 20px; stroke: #8a8a8a; }
+    input {
+      flex: 1; min-width: 0; border: 0; outline: 0; background: transparent;
+      color: inherit; font: inherit; font-size: 17px;
+    }
+    input::placeholder { color: #7a7a7a; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="clock" id="clock"></div>
+    <div class="date" id="date"></div>
+    <form id="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+      </svg>
+      <input id="q" type="text" placeholder="Search the web or type a URL" autocomplete="off" autofocus>
+    </form>
+  </main>
+
+  <!-- the clock + search bar; it also loads Browsy (content.ts) -->
+  <script type="module" src="./newtab.ts"></script>
+</body>
+</html>
